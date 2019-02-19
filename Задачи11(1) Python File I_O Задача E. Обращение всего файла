@@ -1,0 +1,19 @@
+#Hapilin
+a = open("Testo5.txt","r")
+z = open("Testo5viv.txt","w")
+c = a.read()
+z.write(str(c[::-1]))
+z.close()
+a.close()
+
+Testo5.txt
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+
+Testo5viv.txt
+.detacilpmoc naht retteb si xelpmoC
+.xelpmoc naht retteb si elpmiS
+.ticilpmi naht retteb si ticilpxE
+.ylgu naht retteb si lufituaeB
