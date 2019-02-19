@@ -1,0 +1,13 @@
+#Hapilin
+a = open("Testo3.txt","r")
+z = open("Testo3viv.txt","w")
+for i in a:
+    z.write(str(i[::-1]) + "\n")
+z.close()
+
+Testo3.txt
+hello world
+
+Testo3viv.txt
+dlrow olleh
+
