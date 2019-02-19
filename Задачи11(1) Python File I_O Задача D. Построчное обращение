@@ -1,0 +1,19 @@
+#Hapilin
+a = open("Testo4.txt","r")
+z = open("Testo4viv.txt","w")
+for i in reversed(a.readlines()):
+	z.write(str(i))
+z.close()
+a.close()
+
+Testo4.txt
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+
+Testo4viv.txt
+Complex is better than complicated.
+Simple is better than complex.
+Explicit is better than implicit.
+Beautiful is better than ugly.
