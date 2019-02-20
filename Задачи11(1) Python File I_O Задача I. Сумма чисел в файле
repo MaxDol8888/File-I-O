@@ -1,0 +1,30 @@
+#Hapilin
+a =  open("p9.txt", "r")
+z = open("p9viv.txt","w")
+f = a.readlines()
+print(f)
+
+
+k = int(0)
+for i in f:
+    k = int(0)
+    for j in i:
+        try:
+            j = int(j)
+            if type(j) == int:
+                k += j
+        except:
+            j = str(j)
+    z.write(str(k) + "\n")
+z.close()
+a.close()
+
+p9.txt
+ 123
+aaa456
+1x2y3 4 5 6
+
+p9viv.txt
+6
+15
+21
