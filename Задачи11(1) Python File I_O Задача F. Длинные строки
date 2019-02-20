@@ -1,0 +1,23 @@
+#Hapilin
+a =  open("p6.txt", "r")
+z = open("p6viv.txt","w")
+f = a.readlines()
+k = int(0)
+for i in f:
+    if k <= len(i):
+        k = len(i)
+for i in f:
+    if len(i) == k:
+        z.write(i)
+z.close()
+a.close()
+
+p6.txt
+One
+Twenty one
+Two
+Twenty two
+
+p6viv.txt
+Twenty one
+Twenty two
