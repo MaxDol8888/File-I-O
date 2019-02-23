@@ -1,0 +1,39 @@
+#Hapilin
+a = open("2_6.txt","r")
+b = open("2_6viv.txt","w")
+f = a.readlines()
+nin_th = int(0)
+ten_th = int(0)
+eleven_th = int(0)
+counter_ludey = int(0)
+chel = str()
+for i in f:
+    i = i.split()
+    if i[2] == "9" and int(nin_th) < int(i[3]):
+        nin_th = i[3]
+    if i[2] == "10" and int(ten_th) < int(i[3]):
+        ten_th = i[3]
+    if i[2] == "11" and int(eleven_th) < int(i[3]):
+        eleven_th = i[3]
+vremenniy_max = (max(eleven_th, ten_th, nin_th))
+for i in f:
+    i = i.split()
+    if int(i[3]) == int(vremenniy_max):
+        counter_ludey += 1
+        chel = i[0] + " " + i[1]
+
+if counter_ludey:
+    b.write(str(chel))
+else:
+    b.write(str(counter_ludey))
+b.close()
+a.close()
+
+2_6.txt
+Иванов Сергей 9 90
+Сергеев Петр 10 91
+Петров Василий 11 92
+Васильев Иван 9 93
+
+2_6viv.txt
+Васильев Иван
