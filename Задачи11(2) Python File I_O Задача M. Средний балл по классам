@@ -1,0 +1,34 @@
+#Hapilin
+a = open("2_4.txt","r")
+b = open("2_4viv.txt","w")
+f = a.readlines()
+nin_th = float(0)
+ten_th = float(0)
+eleven_th = float(0)
+count_9 = int(0)
+count_10 = int(0)
+count_11 = int(0)
+for i in f:
+    i = i.split()
+    for j in i:
+        if i[2] == "9":
+            count_9 += 1
+            nin_th += float(i[3])
+        if i[2] == "10":
+            count_10 += 1
+            ten_th += float(i[3])
+        if i[2] == "11":
+            count_11 += 1
+            eleven_th += float(i[3])
+b.write(str(float(nin_th)/count_9) + " " + str(float(ten_th)/count_10) + " " + str(float(eleven_th)/count_11))
+b.close()
+a.close()
+
+2_4.txt
+Иванов Сергей 9 90
+Сергеев Петр 10 91
+Петров Василий 11 92
+Васильев Иван 9 93
+
+2_4viv.txt
+91.5 91.0 92.0
