@@ -1,0 +1,28 @@
+#Hapilin
+a = open("2_1.txt","r")
+b = open("2_1viv.txt","w")
+f = a.readlines()
+counter_leters = int(0)
+counter_words = int(0)
+counter_lines = len(f)
+for i in f:
+    counter_words += len(i.split())
+    for j in i:
+        if j not in [" ","\n","."]:
+            counter_leters+=1
+b.write("leters " + str(counter_letters) + "\n")
+b.write("words " + str(counter_words) + "\n")
+b.write("lines " + str(counter_lines) + "\n")
+b.close()
+a.close()
+
+2_1.txt
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+
+2_1viv.txt
+letters 108
+words 20
+lines 4
