@@ -1,0 +1,29 @@
+#Hapilin
+a = open("2_2.txt","r")
+b = open("2_2viv.txt","w")
+f = a.readlines()
+c = str()
+counter = int(0)
+for i in f:
+    counter += 1
+    for j in i:
+        if j not in ["\n"," "]:
+            j = chr(ord(j) + counter)
+            c = str(c) + str(j)
+        else:
+            b.write(c + "\n")
+            c = str()
+b.close()
+a.close()
+
+2_2.txt
+Hello
+Hello
+Hello
+Hello
+
+2_2viv.txt
+Ifmmp
+Jgnnq
+Khoor
+Lipps
