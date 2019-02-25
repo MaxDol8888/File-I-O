@@ -1,4 +1,4 @@
-#Hapilin
+#Hapilin v.1.0
 a =  open("p9.txt", "r")
 z = open("p9viv.txt","w")
 f = a.readlines()
@@ -28,3 +28,31 @@ p9viv.txt
 6
 15
 21
+
+
+#Hapilin v.2.0
+a =  open("Zadacha_I.txt", "r")
+z = open("Zadacha_I_viv.txt","w")
+f = a.readlines()
+summa = int(0)
+k = str("0")
+for i in f:
+    for j in i:
+        try:
+            j = int(j)
+            k += str(j)
+        except:
+            summa += int(k)
+            k = str("0")
+summa += int(k)
+z.write(str(summa))
+z.close()
+a.close()
+
+Zadacha_I.txt
+ 123
+aaa456
+1x2y3 4 5 6
+
+Zadacha_I_viv.txt
+600
