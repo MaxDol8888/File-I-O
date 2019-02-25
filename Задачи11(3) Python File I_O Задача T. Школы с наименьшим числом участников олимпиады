@@ -1,0 +1,28 @@
+#Hapilin
+a = open("2_11(3).txt","r")
+b = open("2_11(3)_viv.txt","w")
+f = a.readlines()
+d = dict()
+for i in f:
+    i = i.split()
+    if i[2] not in d:
+        d.update({i[2]:int(1)})
+    else:
+        d.update({i[2]:int(d[i[2]]) + int(1)})
+for i in reversed(sorted(d.keys())):
+    if d[i] == min(d.values()):
+        b.write(str(i) + " ")
+        
+b.close()
+a.close()
+
+2_11(3).txt
+Иванов Сергей 14 56
+Сергеев Петр 23 74
+Петров Василий 3 99
+Васильев Андрей 3 56
+Андреев Роман 14 75
+Романов Иван 27 68
+
+2_11(3)_viv.txt
+27 23 
