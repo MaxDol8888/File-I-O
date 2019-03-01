@@ -1,0 +1,37 @@
+#Hapilin
+a = open("5_11(3).txt","r")
+b = open("5_11(3)_viv.txt","w")
+f = a.readlines()
+school = []
+score = []
+d = dict()
+vremmax = int(0)
+for i in f:
+    i = i.split()
+    school.append(i[2])
+    score.append(i[3])
+p = list(zip(score,school))
+p1 = p.copy()
+for i in p:
+    if int(i[0]) > int(vremmax):
+        vremmax = i[0]
+
+for i in p1:
+    if int(i[0]) == int(vremmax):
+        d.update({i[1]:i[0]})
+for i in sorted(d.keys()):
+    b.write(str(i) + " ")
+    
+b.close()
+a.close()
+
+5_11(3).txt
+Иванов Сергей 13 80
+Сергеев Петр 26 70
+Сергеев Андрей 35 80
+Петров Василий 13 80
+Иванов Роман 35 70
+Иванов Иван 26 70
+
+5_11(3)_viv.txt
+13 35 
