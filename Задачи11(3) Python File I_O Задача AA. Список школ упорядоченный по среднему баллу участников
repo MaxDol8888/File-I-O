@@ -1,0 +1,31 @@
+#Hapilin
+a = open("9_11(3).txt","r")
+b = open("9_11(3)_viv.txt","w")
+f = a.readlines()
+d = dict()
+for i in f:
+    i = i.split()
+    if i[2] not in d:
+        d.update({i[2]:int(i[3])})
+    else:
+        d.update({i[2]:(int(i[3]) + d[i[2]])/2})
+vremmax = max(d.values())
+while vremmax != 0:
+    for i in sorted(d.keys()):
+        if d[i] == vremmax:
+            b.write(i + " ")
+    vremmax -= 1
+        
+b.close()
+a.close()
+
+9_11(3).txt
+Иванов Сергей 13 45 
+Сергеев Петр 13 45
+Сергеев Андрей 20 55
+Петров Василий 20 55
+Иванов Роман 70 40
+Иванов Иван 70 60
+
+9_11(3)_viv.txt
+20 70 13 
