@@ -1,0 +1,33 @@
+#Hapilin
+a = open("6_11(3).txt","r")
+b = open("6_11(3)_viv.txt","w")
+f = a.readlines()
+d = dict()
+counter = int(0)
+scores = float(0)
+for i in f:
+    i = i.split()
+    counter += 1
+    scores += float(i[3])
+    if i[2] not in d:
+        d.update({i[2]:float(i[3])})
+    else:
+        d.update({i[2]:(float(i[3]) + d[i[2]])/2})
+sr_bal = scores/counter
+for v,k in d.items():
+    if k > sr_bal:
+        b.write(v + " ")
+        
+b.close()
+a.close()
+
+6_11(3).txt
+Иванов Сергей 13 80
+Сергеев Петр 26 70
+Сергеев Андрей 35 80
+Петров Василий 13 80
+Иванов Роман 35 70
+Иванов Иван 26 70
+
+6_11(3)_viv.txt
+13 
