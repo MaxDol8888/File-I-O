@@ -47,3 +47,25 @@ a.close()
 4_11(4)_viv.txt
 Варфоломей Виссарионов
 Полуэкт Варфоломеев
+
+
+inFile = open('input.txt', 'r', encoding='utf8')
+outFile = open('output.txt', 'w', encoding='utf8')
+Votes = 0
+Candidates = []
+for l in inFile:
+   Candidates += l.split('\n')
+for string in inFile.readlines():
+    Votes += 1
+DiffCandidates = dict()
+for line in Candidates:
+   if line in Candidates:
+    DiffCandidates[line] += 1
+   else:
+       DiffCandidates[line] = 0
+ 
+SortCandidates = sorted(DiffCandidates, key=lambda x: x[0], reverse=True)
+print(SortCandidates, file=outFile)
+ 
+inFile.close()
+outFile.close()
