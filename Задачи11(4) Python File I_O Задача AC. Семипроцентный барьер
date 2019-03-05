@@ -1,0 +1,49 @@
+#Hapilin
+a = open("2_11(4).txt","r")
+b = open("2_11(4)_viv.txt","w")
+f = a.readlines()
+c = []
+d = dict()
+
+for i in f:
+    if i != "PARTIES:\n":
+        if i == "VOTES:\n":
+            break
+        c.append(str(i))
+for i in f:
+    if i not in d:
+        d.update({i:int(1)})
+    else:
+        d.update({i:d[i] + 1})
+
+for i in c:
+    if float(d[i]-1) > float(((sum(d.values())-2)/100)*7):
+        b.write(str(i).replace("\n","") + "\n")
+b.close()
+a.close()
+
+2_11(4).txt
+PARTIES:
+Party one
+Party two
+Party three
+VOTES:
+Party one
+Party one
+Party three
+Party one
+Party one
+Party three
+Party two
+Party one
+Party three
+Party three
+Party one
+Party one
+Party three
+Party three
+Party one
+
+2_11(4)_viv.txt
+Party one
+Party three
