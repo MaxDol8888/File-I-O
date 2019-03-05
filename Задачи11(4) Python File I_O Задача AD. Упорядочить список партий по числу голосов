@@ -1,0 +1,37 @@
+#Hapilin
+a = open("3_11(4).txt","r")
+b = open("3_11(4)_viv.txt","w")
+f = a.readlines()
+d = dict()
+
+for i in f:
+    if i not in d and i != "PARTIES:\n" and i != "VOTES:\n":
+        d.update({i:int(1)})
+    elif i in d and i != "PARTIES:\n" and i != "VOTES:\n":
+        d.update({i:d[i] + 1})
+
+i = max(d.values())
+while i != 0:
+    for k,j in sorted(d.items()):
+        if j == i:
+            b.write(str(k))
+    i -= 1
+b.close()
+a.close()
+
+3_11(4).txt
+PARTIES:
+Party one
+Party two
+Party three
+VOTES:
+Party one
+Party two
+Party three
+Party two
+Party three
+
+3_11(4)_viv.txt
+Party three
+Party two
+Party one
