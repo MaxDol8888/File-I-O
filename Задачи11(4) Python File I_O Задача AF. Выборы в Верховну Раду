@@ -1,0 +1,62 @@
+#Hapilin
+a = open("5_11(4).txt","r")
+b = open("5_11(4)_viv.txt","w")
+f = a.readlines()
+d = dict()
+c = []
+vivod = dict()
+viv = dict()
+for i in f:
+    i = i.split()
+    if str(i[0]) + " " + str(i[1]) not in d:
+        d.update({str(i[0]) + " " + str(i[1]) : float(i[2])})
+    else:
+        d.update({str(i[0]) + " " + str(i[1]) : d[str(i[0]) + " " + str(i[1])] + float(i[2])})
+for i in d.keys():
+    c.append(str(d[i]/(int(sum(d.values()))/450))[int(str(d[i]/(int(sum(d.values()))/450)).find("."))+1])
+    vivod.update({i:int(d[i]/(int(sum(d.values()))/450))})
+    viv.update({str(d[i]/(int(sum(d.values()))/450))[int(str(d[i]/(int(sum(d.values()))/450)).find("."))+1]:int(d[i]/(int(sum(d.values()))/450))}) 
+ostat = 450 - sum(vivod.values())
+
+maximum1 = max(c)
+maximum2 = int(0)
+for i in c:
+    if int(i) > maximum2 and int(i) < int(maximum1):
+        maximum2 = int(i)
+
+
+while ostat > 0:
+    for i in reversed(sorted(viv.keys())):
+        if i == maximum1:
+            viv.update({i:viv[i]+1})
+            ostat -= 1
+            break
+        elif i == maximum2:
+            viv.update({i:viv[i]+1})
+            ostat -= 1
+            break
+        else:
+            viv.update({i:viv[i]+1})
+            ostat -= 1
+            break
+vivodnaya = viv.values()
+vivodnaya2 = d.keys()
+p = zip(vivodnaya2,vivodnaya)
+for i in p:
+    i = str(i).replace("(","")
+    i = str(i).replace(")","")
+    i = str(i).replace("'","")
+    i = str(i).replace(",","")
+    b.write(str(i) + "\n")
+b.close()
+a.close()
+
+5_11(4).txt
+Party One 100000
+Party Two 200000
+Party Three 400000
+
+5_11(4)_viv.txt
+Party One 64
+Party Two 129
+Party Three 257
