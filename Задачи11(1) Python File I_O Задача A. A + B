@@ -19,3 +19,13 @@ Testo1.txt
 Testo1viv.txt
 4
 
+
+#Soroka
+stream=open('first.txt','r')
+print(sum(map(int,stream.readlines())))
+
+first.txt
+2
+56
+78
+100
