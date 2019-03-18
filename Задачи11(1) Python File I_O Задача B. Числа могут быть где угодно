@@ -18,3 +18,28 @@ Testo1.txt
    
 Testo1viv.txt
 4
+
+
+#Soroka
+stream=open('second.txt','r')
+a=stream.read()
+suma=0
+c=a.split('\n')
+for i in c:
+    n=i.split(' ')
+    if(n==['']):
+        continue
+    else:
+        try:
+            while(i.count('')!=0):
+                n.remove('')
+        except:
+            pass
+        finally:
+            suma+=sum(map(int,n))
+print(suma)
+
+second.txt
+2   3
+23 5 
+2 4 5 7
