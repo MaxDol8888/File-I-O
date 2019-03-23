@@ -27,3 +27,25 @@ Ifmmp
 Jgnnq
 Khoor
 Lipps
+
+
+#Soroka
+stream=open('second-in.txt','r')
+a=stream.readlines()
+for i in range(len(a)):
+    a[i]=a[i].replace('\n','')
+for i in range(len(a)):
+    st=''
+    for i1 in a[i]:
+        if(ord(i1)==122):
+            st+=chr(ord('a')+i+1)
+        elif(ord(i1)==90):
+            st+=chr(ord('A')+i+1)
+        else:
+            st+=chr(ord(i1)+i+1)
+    a[i]=st
+stream.close()
+new_stream=open('second-out.txt','w')
+for i in a:
+    new_stream.write(i+"\n")
+new_stream.close()
