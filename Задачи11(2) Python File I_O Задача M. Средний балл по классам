@@ -32,3 +32,19 @@ a.close()
 
 2_4viv.txt
 91.5 91.0 92.0
+
+
+#Soroka
+import numpy
+stream=open('fourth-in.txt','r')
+ych={
+    '9':[],
+    '10':[],
+    '11':[]
+    }
+for i in stream.readlines():
+    ych[i.split(' ')[2]].append(int(i.split(' ')[3]))
+stream.close()
+new_stream=open('fourth-out.txt','w')
+new_stream.write(str(numpy.mean(ych['9']))+" "+str(numpy.mean(ych['10']))+" "+str(numpy.mean(ych['11'])))
+new_stream.close()     
