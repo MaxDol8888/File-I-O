@@ -37,3 +37,20 @@ a.close()
 
 2_6viv.txt
 Васильев Иван
+
+
+#Soroka
+stream=open('sixth-in.txt','r')
+marks=[]
+ych=dict()
+for i in stream.readlines():
+    marks.append(int(i.split(' ')[3]))
+    ych[i.split(' ')[0]+" "+i.split(' ')[1]]=int(i.split(' ')[3])
+stream.close()
+new_stream=open('sixth-out.txt','w')
+if(list(ych.values()).count(max(marks))==1):
+    ych=dict(zip(ych.values(),ych.keys()))
+    new_stream.write(ych[max(marks)])
+else:
+    new_stream.write(str(list(ych.values()).count(max(marks))))    
+new_stream.close()
