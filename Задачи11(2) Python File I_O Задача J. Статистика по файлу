@@ -26,3 +26,16 @@ Complex is better than complicated.
 letters 108
 words 20
 lines 4
+
+
+#Soroka
+import re
+stream=open('first-in.txt','r')
+a=stream.read()
+letters=len(re.findall(r'\w',a))
+words=len(re.findall(r'\s',a))+1
+lines=len(re.split('\n',a))
+stream.close()
+new_stream=open('first-out.txt','w')
+new_stream.write(str(letters)+" letters\n"+str(words)+" words\n"+str(lines)+" lines")
+new_stream.close()    
