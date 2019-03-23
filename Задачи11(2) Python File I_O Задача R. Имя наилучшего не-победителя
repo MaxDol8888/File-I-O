@@ -1,0 +1,18 @@
+#Soroka
+stream=open('nineth-in.txt','r')
+ych=dict()
+for i in stream.readlines():
+    try:
+        ych[int(i.split(' ')[3])].append(i.split(' ')[0]+" "+i.split(' ')[1])
+    except:
+        ych[int(i.split(' ')[3])]=[i.split(' ')[0]+" "+i.split(' ')[1]]
+print(ych)
+q=list(reversed(sorted(list(set(ych.keys())))))
+print(q)
+stream.close()
+new_stream=open('nineth-out.txt','w')
+if(len(ych[q[1]])==1):
+    new_stream.write(''.join((ych[q[1]])))
+else:
+    new_stream.write(len(ych[q[1]]))
+new_stream.close()
