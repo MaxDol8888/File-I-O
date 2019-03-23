@@ -41,3 +41,20 @@ a.close()
 
 2_7viv.txt
 80 81 82
+
+
+#Soroka
+ych={
+    '9':[],
+    '10':[],
+    '11':[]
+    }
+stream=open('seventh-in.txt','r')
+for i in stream.readlines():
+    ych[i.split(' ')[2]].append(int(i.split(' ')[3]))
+for i in ych.keys():
+    ych[i]=list(reversed(sorted(list(set(ych[i])))))
+stream.close()
+new_stream=open('seventh-out.txt','w')
+new_stream.write(str(ych['9'][1])+" "+str(ych['10'][1])+" "+str(ych['11'][1]))
+new_stream.close()
