@@ -43,3 +43,19 @@ a.close()
 
 2_5viv.txt
 2 2 1
+
+
+#Soroka
+stream=open('fifth-in.txt','r')
+ych={
+    '9':[],
+    '10':[],
+    '11':[]
+    }
+for i in stream.readlines():
+    ych[i.split(' ')[2]].append(int(i.split(' ')[3]))
+stream.close()
+print(ych)
+new_stream=open('fifth-out.txt','w')
+new_stream.write(str(ych['9'].count(max(ych['9'])))+" "+str(ych['10'].count(max(ych['10'])))+" "+str(ych['11'].count(max(ych['11']))))
+new_stream.close()
