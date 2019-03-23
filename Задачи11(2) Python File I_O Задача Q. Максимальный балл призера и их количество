@@ -42,3 +42,16 @@ a.close()
 
 2_8viv.txt
 92 2
+
+
+#Soroka
+marks=[]
+stream=open('eighth-in.txt','r')
+for i in stream.readlines():
+    marks.append(int(i.split(' ')[3]))
+stream.close()
+marks=list(reversed(sorted(marks)))
+marks1=list(reversed(sorted(set(marks))))
+new_stream=open('eighth-out.txt','w')
+new_stream.write(str(marks1[1])+" "+str(marks.count(marks1[1])))
+new_stream.close()
