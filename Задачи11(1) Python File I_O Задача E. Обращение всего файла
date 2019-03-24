@@ -17,3 +17,12 @@ Testo5viv.txt
 .xelpmoc naht retteb si elpmiS
 .ticilpmi naht retteb si ticilpxE
 .ylgu naht retteb si lufituaeB
+
+
+#Soroka
+stream=open('fifth.txt','r')
+a=[[i[::-1]]for i in stream.read().split('\n')]
+a.reverse()
+for i in a:
+    print(*i)
+    
