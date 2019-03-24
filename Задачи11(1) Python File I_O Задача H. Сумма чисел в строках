@@ -25,3 +25,18 @@ p8viv.txt
 4
 7
 6
+
+
+#Soroka
+stream=open('eighth.txt','r')
+a=stream.read().split('\n')
+for i in a:
+    if(i==''):
+        continue
+    else:
+        b=list(i)
+        while(b.count(' ')!=0):
+            b.remove(' ')
+        print(sum(map(int,b)))
+        
+        
