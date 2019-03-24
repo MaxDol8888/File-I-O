@@ -21,3 +21,16 @@ Twenty two
 p6viv.txt
 Twenty one
 Twenty two
+
+
+#Soroka
+stream=open('sixth.txt','r')
+b=stream.readlines()
+a=[len(i)for i in b]
+for i in b:
+    if(len(i)==max(a)):
+        print(i[:-1])
+    else:
+        continue
+        
+        
