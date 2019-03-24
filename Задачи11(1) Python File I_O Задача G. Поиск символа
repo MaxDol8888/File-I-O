@@ -20,3 +20,13 @@ Bilbo.Baggins@bagend.hobbiton.shire.me
 
 p7viv.txt
 YES
+
+
+#Soroka
+stream=open('seventh.txt','r')
+if('@' in stream.read()):
+    print("YES")
+else:
+    print("NO")
+    
+    
