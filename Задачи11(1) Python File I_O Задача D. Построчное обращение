@@ -17,3 +17,13 @@ Complex is better than complicated.
 Simple is better than complex.
 Explicit is better than implicit.
 Beautiful is better than ugly.
+
+
+#Soroka
+stream=open('fourth.txt','r')
+for i in reversed(stream.readlines()):
+    if('\n' in i):
+        print(i[:-1])
+    else:
+        print(i)
+	
