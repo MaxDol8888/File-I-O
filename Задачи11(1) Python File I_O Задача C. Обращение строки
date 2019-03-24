@@ -11,3 +11,7 @@ hello world
 Testo3viv.txt
 dlrow olleh
 
+
+#Soroka
+stream=open('third.txt','r')
+print(stream.read()[::-1])
