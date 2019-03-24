@@ -56,3 +56,41 @@ aaa456
 
 Zadacha_I_viv.txt
 600
+
+
+#Soroka
+stream=open('nineth.txt','r')
+a=stream.readlines()
+suma=0
+for i in range(len(a)):
+    if('\n' in a[i]):
+        a[i]=a[i][:-1].split(' ')
+    else:
+       a[i]=a[i].split(' ')
+       continue
+b=[]
+for i in a:
+    if(len(i)>1):
+        b.append(i)
+for i in a:
+    num='0'
+    for i1 in i:
+        try:
+            o=int(i1)
+            num+=i1
+        except ValueError:
+            suma+=int(num)
+            num='0'
+    suma+=int(num)
+for a in b:
+    for a1 in a:
+        for a2 in a1:
+            num='0'
+            try:
+                o=int(a2)
+                num+=a2
+            except ValueError:
+                suma+=int(num)
+                num='0'
+            suma+=int(num)       
+print(suma)
